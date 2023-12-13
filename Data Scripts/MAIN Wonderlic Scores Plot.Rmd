@@ -1,0 +1,117 @@
+---
+title: "Wonderlic Table"
+output: html_document
+date: "2023-10-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Installing Packages
+```{r}
+
+#install.packages("rvest")
+#install.packages("tidyverse")
+#install.packages("openxlsx")
+#install.packages("plyr")
+# Load the package
+library(openxlsx)
+library(rvest)
+library(tidyverse)
+library(plyr)
+```
+
+```{r data_import}
+# Write the full_table data frame to an Excel file
+# write.xlsx(full_table, "Historic_Wonderlic.xlsx")
+
+# Specify the URL
+url <- "https://footballiqscore.com/wonderlic-score-database"
+
+# Read the HTML code from the website
+webpage <- rvest::read_html(url)
+
+# Reading the full table
+first_full_table = webpage %>% 
+  html_element('table') %>% 
+  html_table()
+
+# Rename the column
+names(first_full_table)[names(first_full_table) == "Wonderlic Score"] <- "Score"
+
+# Select the columns
+first_full_table <- select(first_full_table, Player, Position, Score)
+```
+
+```{r}
+# Specify the URL
+url <- "https://wonderlictestpractice.com/nfl-wonderlic-scores/"
+
+# Read the HTML code from the website
+webpage <- rvest::read_html(url)
+
+# Reading the full table
+second_full_table = webpage %>%
+  html_element('table') %>%
+  html_table() %>%
+  select(Player, Score, Position)
+```
+
+```{r}
+# Combine the two dataframes
+combined_table <- bind_rows(first_full_table, second_full_table)
+
+# Remove duplicates
+unique_table <- distinct(combined_table)
+
+# Remove duplicates based on Player column
+unique_table <- distinct(combined_table, Player, .keep_all = TRUE)
+
+# Define the mapping from abbreviations to full names
+position_mapping <- c("CB" = "Cornerback", "CBm" = "Cornerback", "DB" = "Defensive Back", 
+                      "DE" = "Defensive End", "DT" = "Defensive Tackle", "DL" = "Defensive Lineman", 
+                      "FB" = "Full Back", "FS" = "Free Safety", "LB" = "Linebacker", "OG" = "Offensive Guard",
+                      "OL" = "Offensive Linebacker", "OT" = "Offensive Tackle", "P" = "Punter", 
+                      "QB" = "Quarterback", "RB" = "Running Back", "TE" = "Tight End", 
+                      "S" = "Safety", "T" = "Tackle", "WR" = "Wide Receiver")
+
+# Replace abbreviations with full names
+unique_table <- mutate(unique_table, Position = mapvalues(Position, from = names(position_mapping), to = position_mapping))
+
+# Remove dots from Player names
+unique_table <- mutate(unique_table, Player = gsub("\\.", "", Player))
+
+# Remove duplicates based on Player column
+unique_table <- distinct(unique_table, Player, .keep_all = TRUE)
+
+# Remove mispelled reoccurences
+mispelled_names <- c("Dan Orlovski", "Don Makowski", "Donovan Mcnabb", "Jason Gasrrett", "Jason Guesser", "Josh Mccown", "Khalil Mach", "Mark Brunel", "Max Bullouch",
+"Mike Mcmahon", "Phillip Rivers")
+unique_table <- filter(unique_table, !(Player %in% mispelled_names))
+
+# Save to Excel
+write.xlsx(unique_table, "wonderlic.xlsx")
+
+```
+
+```{r plot}
+summary_data <- full_table %>%
+  group_by(Position) %>%
+  summarise(`Average Score` = round(mean(`Wonderlic Score`, na.rm = TRUE),0)) %>%
+  mutate(Position = reorder(Position, `Average Score`))
+
+ggplot(data=summary_data, aes(x=Position, y=`Average Score`)) +
+  geom_bar(aes(fill=`Average Score`),
+           stat="identity",
+           color="black") +
+  scale_fill_gradient(low = "blue", high = "red") +
+  labs(title="Average Wonderlic Score per Position", x="Position", y="Average Score") +
+  geom_text(aes(label = `Average Score`), 
+            position = position_dodge(width = 0.9), 
+            hjust = -0.25)+
+  coord_flip() +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust=0.5))
+```
+

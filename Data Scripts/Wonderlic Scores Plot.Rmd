@@ -1,0 +1,53 @@
+---
+title: "Wonderlic Table"
+output: html_document
+date: "2023-10-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Installing Packages
+```{r}
+
+#install.packages("rvest")
+#install.packages("tidyverse")
+library(rvest)
+library(tidyverse)
+```
+
+```{r data_import}
+# Specify the URL
+url <- "https://footballiqscore.com/wonderlic-score-database"
+
+# Read the HTML code from the website
+webpage <- rvest::read_html(url)
+
+# Reading the full table
+full_table = webpage |> 
+  html_element('table') |> 
+  html_table() |>
+  select(Player, Position, `Wonderlic Score`)
+```
+
+```{r plot}
+summary_data <- full_table %>%
+  group_by(Position) %>%
+  summarise(`Average Score` = round(mean(`Wonderlic Score`, na.rm = TRUE),0)) %>%
+  mutate(Position = reorder(Position, `Average Score`))
+
+ggplot(data=summary_data, aes(x=Position, y=`Average Score`)) +
+  geom_bar(aes(fill=`Average Score`),
+           stat="identity",
+           color="black") +
+  scale_fill_gradient(low = "blue", high = "red") +
+  labs(title="Average Wonderlic Score per Position", x="Position", y="Average Score") +
+  geom_text(aes(label = `Average Score`), 
+            position = position_dodge(width = 0.9), 
+            hjust = -0.25)+
+  coord_flip() +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust=0.5))
+```
+

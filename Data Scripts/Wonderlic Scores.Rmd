@@ -1,0 +1,33 @@
+---
+title: "Wonderlic Table"
+output: html_document
+date: "2023-10-24"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Installing Packages
+```{r}
+
+#install.packages("rvest")
+#install.packages("tidyverse")
+library(rvest)
+library(tidyverse)
+```
+
+```{r}
+# Specify the URL
+url <- "https://footballiqscore.com/wonderlic-score-database"
+
+# Read the HTML code from the website
+webpage <- rvest::read_html(url)
+
+# Reading the full table
+full_table = webpage |> 
+  html_element('table') |> 
+  html_table() |>
+  select(Player, Position, `Wonderlic Score`)
+```
+

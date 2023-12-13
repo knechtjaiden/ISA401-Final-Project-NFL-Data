@@ -1,0 +1,93 @@
+Team,Salary,Position.x,First_Name,Last_Name,Position.y,Score
+ ARI,59000000.00,FS,Budda,Baker,Safety,14
+ ARI,1150000.00,C,Pat,Elflein,Offensive Linebacker,21
+ ATL,55000000.00,LT,Jake,Matthews,Offensive Tackle,32
+ ATL,10500000.00,RB,Cordarrelle,Patterson,Wide Receiver,11
+ BAL,260000000.00,QB,Lamar,Jackson,Quarterback,13
+ BAL,98750000.00,LT,Ronnie,Stanley,Defensive Back,29
+ BAL,97500000.00,CB,Marlon,Humphrey,Cornerback,20
+ BAL,70000000.00,FS,Marcus,Williams,Safety,34
+ BAL,2500000.00,DE,Jadeveon,Clowney,Outside Linebacker,14
+Noy  BAL,1400000.00,ILB,Kyle,Van,Outside Linebacker,16
+ BAL,1317500.00,QB,Josh,Johnson,Quarterback,24
+ BUF,258034000.00,QB,Josh,Allen,Quarterback,37
+ BUF,58300000.00,LT,Dion,Dawkins,Offensive Linebacker,12
+ CAR,71246000.00,RT,Taylor,Moton,Offensive Linebacker,29
+ CAR,10000000.00,QB,Andy,Dalton,Quarterback,29
+ CHI,72000000.00,ILB,Tremaine,Edmunds,Middle Linebacker,0
+ CHI,3250000.00,G,Dan,Feeney,Offensive Linebacker,29
+ CIN,275000000.00,QB,Joe,Burrow,Quarterback,34
+ CIN,21750000.00,CB,Chidobe,Awuzie,Safety,34
+ CIN,11500000.00,RB,Joe,Mixon,Running Back,12
+ CLE,230000000.00,QB,Deshaun,Watson,Quarterback,20
+ CLE,125000000.00,DE,Myles,Garrett,Defensive End,31
+ CLE,100000000.00,WR,Amari,Cooper,Wide Receiver,21
+ CLE,57000000.00,DT,Dalvin,Tomlinson,Defensive Tackle,25
+ CLE,54750000.00,TE,David,Njoku,Tight End,24
+ CLE,48000000.00,G,Joel,Bitonio,Offensive Guard,29
+ CLE,18000000.00,C,Ethan,Pocic,Offensive Linebacker,29
+ DAL,160000000.00,QB,Dak,Prescott,Quarterback,25
+ DEN,242588236.00,QB,Russell,Wilson,Quarterback,28
+ DEN,68000000.00,LT,Garett,Bolles,Offensive Linebacker,9
+ DEN,1300000.00,CB,Fabian,Moreau,Cornerback,23
+ DET,134000000.00,QB,Jared,Goff,Quarterback,36
+ DET,18300000.00,ILB,Alex,Anzalone,Linebacker,26
+ DET,13000000.00,DE,Charles,Harris,Linebacker,23
+ DET,3000000.00,QB,Teddy,Bridgewater,Quarterback,20
+ DET,1600000.00,QB,Nate,Sudfeld,Quarterback,28
+ GB,13500000.00,QB,Jordan,Love,Quarterback,27
+ HOU,15250000.00,WR,Robert,Woods,Wide Receiver,23
+ HOU,13000000.00,FS,Jimmie,Ward,Defensive End,17
+ HOU,4839343.00,RT,Josh,Jones,Safety,17
+ HOU,3000000.00,RB,Dare,Ogunbowale,Running Back,35
+ HOU,1080000.00,TE,Eric,Saubert,Tight End,35
+ JAC,54000000.00,LT,Cam,Robinson,Offensive Linebacker,16
+ JAC,41250000.00,TE,Evan,Engram,Tight End,26
+ JAC,22742638.00,OLB,Josh,Allen,Quarterback,37
+ KC,1317500.00,QB,Blaine,Gabbert,Quarterback,42
+ LV,72750000.00,QB,Jimmy,Garoppolo,Quarterback,29
+ LAC,262500000.00,QB,Justin,Herbert,Quarterback,39
+ LAC,141000000.00,OLB,Khalil,Mack,Linebacker,17
+ LAC,135000000.00,OLB,Joey,Bosa,Defensive Lineman,37
+ LAC,60000000.00,WR,Mike,Williams,Wide Receiver,17
+ LAC,12000000.00,TE,Gerald,Everett,Tight End,24
+ LAC,5600000.00,LS,Josh,Harris,Quarterback,25
+ LAR,160000000.00,QB,Matthew,Stafford,Quarterback,38
+ LAR,95000000.00,DT,Aaron,Donald,Defensive Tackle,25
+ LAR,80100000.00,WR,Cooper,Kupp,Wide Receiver,37
+ LAR,1165000.00,QB,Carson,Wentz,Quarterback,40
+ LAR,1080000.00,CB,Ahkello,Witherspoon,Cornerback,29
+ MIA,110000000.00,OLB,Bradley,Chubb,Defensive End,0
+ MIN,35000000.00,QB,Kirk,Cousins,Quarterback,33
+ NE,9000000.00,FS,Jabrill,Peppers,Safety,26
+ NE,5176952.00,CB,Marcus,Jones,Defensive End,24
+ NE,3000000.00,RB,Ezekiel,Elliott,Running Back,32
+ NO,150000000.00,QB,Derek,Carr,Quarterback,20
+ NO,97603000.00,CB,Marshon,Lattimore,Cornerback,23
+ NO,75000000.00,RB,Alvin,Kamara,Running Back,24
+ NO,4000000.00,QB,Jameis,Winston,Quarterback,27
+ NO,1010000.00,QB,Jake,Luton,Quarterback,29
+ NYG,1180000.00,ILB,Jarrad,Davis,Linebacker,23
+ NYJ,112500000.00,QB,Aaron,Rodgers,Quarterback,35
+ NYJ,7000000.00,RB,Dalvin,Cook,Running Back,11
+ NYJ,2350000.00,DE,Solomon,Thomas,Defensive End,24
+ PHI,255000000.00,QB,Jalen,Hurts,Quarterback,18
+ PHI,45000000.00,OLB,Haason,Reddick,Linebacker,21
+ PHI,5000000.00,QB,Marcus,Mariota,Quarterback,33
+ PHI,1775000.00,ILB,Zach,Cunningham,Linebacker,22
+ PHI,1590000.00,S,Justin,Evans,Safety,25
+ PHI,1165000.00,CB,Bradley,Roby,Cornerback,25
+ PHI,1025400.00,T,Roderick,Johnson,Offensive Linebacker,23
+ PIT,11250000.00,QB,Mitchell,Trubisky,Quarterback,25
+ SF,4500000.00,QB,Sam,Darnold,Quarterback,28
+ SEA,75000000.00,QB,Geno,Smith,Quarterback,24
+ SEA,70580000.00,SS,Jamal,Adams,Safety,11
+ SEA,5500000.00,ILB,Bobby,Wagner,Linebacker,8
+ TB,82500000.00,WR,Mike,Evans,Wide Receiver,25
+ TB,4500000.00,ILB,Lavonte,David,Linebacker,16
+ TB,4000000.00,QB,Baker,Mayfield,Quarterback,25
+ TEN,118000000.00,QB,Ryan,Tannehill,Quarterback,34
+ WAS,72000000.00,DT,Jonathan,Allen,Defensive Tackle,27
+ WAS,34500000.00,WR,Curtis,Samuel,Wide Receiver,22
+ WAS,24065000.00,TE,Logan,Thomas,Quarterback,29
+ WAS,8000000.00,QB,Jacoby,Brissett,Quarterback,24
